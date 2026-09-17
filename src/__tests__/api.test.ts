@@ -269,3 +269,31 @@ describe("Problem Statement Alignment", () => {
     expect(source).toContain("consequence");
   });
 });
+
+describe("Vercel & Resilience Engineering", () => {
+  it("exports maxDuration = 60 for Vercel serverless execution", () => {
+    const source = readRouteSource();
+    expect(source).toContain("export const maxDuration = 60");
+  });
+
+  it("exports dynamic = 'force-dynamic' for Vercel route handling", () => {
+    const source = readRouteSource();
+    expect(source).toContain("export const dynamic = \"force-dynamic\"");
+  });
+
+  it("implements exponential backoff retry logic and fallback model routing", () => {
+    const source = readRouteSource();
+    expect(source).toContain("generateContentWithRetry");
+    expect(source).toContain("gemini-3.6-flash");
+    expect(source).toContain("gemini-1.5-flash");
+  });
+
+  it("catches 503 high demand and 429 rate limit errors gracefully", () => {
+    const source = readRouteSource();
+    expect(source).toContain("503");
+    expect(source).toContain("UNAVAILABLE");
+    expect(source).toContain("429");
+    expect(source).toContain("RESOURCE_EXHAUSTED");
+  });
+});
+
