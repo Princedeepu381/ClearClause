@@ -1,7 +1,7 @@
-# Product Requirements Document: LEXGUARD — AI Rights & Contract Intelligence System
+# Product Requirements Document: CLEARCLAUSE — AI Rights & Contract Intelligence System
 
 ## 1. Product Overview
-LEXGUARD is an AI-powered contract intelligence platform that analyzes legal and quasi-legal documents to identify potentially harmful, exploitative, ambiguous, or high-risk clauses before users agree to them. Built entirely on a **Google-native technology stack**, the system leverages **Google Gemini 2.5 Flash** for adversarial multi-agent legal reasoning, **Google Cloud Run** for serverless deployment, **Google Artifact Registry** for container management, and **Google Fonts** for optimized typography — demonstrating deep, end-to-end integration of Google Cloud services.
+CLEARCLAUSE is an AI-powered contract intelligence platform that analyzes legal and quasi-legal documents to identify potentially harmful, exploitative, ambiguous, or high-risk clauses before users agree to them. Built entirely on a **Google-native technology stack**, the system leverages **Google Gemini 2.5 Flash** for adversarial multi-agent legal reasoning, **Google Cloud Run** for serverless deployment, **Google Artifact Registry** for container management, and **Google Fonts** for optimized typography — demonstrating deep, end-to-end integration of Google Cloud services.
 
 The platform extracts and classifies contractual clauses, evaluates risk through severity scoring, reasons about real-world consequences via adversarial AI agents, and provides explainable, plain-language insights — empowering individuals and organizations to make informed decisions.
 

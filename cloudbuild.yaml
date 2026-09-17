@@ -1,10 +1,10 @@
-# Google Cloud Build configuration for LexGuard
+# Google Cloud Build configuration for ClearClause
 # Builds and deploys the containerized application to Google Cloud Run
 # via Google Artifact Registry.
 #
 # Usage:
 #   gcloud builds submit --config=cloudbuild.yaml \
-#     --substitutions=_REGION=asia-south1,_SERVICE_NAME=lexguard
+#     --substitutions=_REGION=asia-south1,_SERVICE_NAME=clearclause
 #
 # Prerequisites:
 #   - Google Cloud project with billing enabled
@@ -14,8 +14,8 @@
 
 substitutions:
   _REGION: asia-south1
-  _SERVICE_NAME: lexguard
-  _REPO_NAME: lexguard-repo
+  _SERVICE_NAME: clearclause
+  _REPO_NAME: clearclause-repo
 
 steps:
   # Step 1: Create Artifact Registry repository (if not exists)
@@ -27,7 +27,7 @@ steps:
         gcloud artifacts repositories create ${_REPO_NAME} \
           --repository-format=docker \
           --location=${_REGION} \
-          --description="LexGuard container images" \
+          --description="ClearClause container images" \
           --quiet || true
 
   # Step 2: Build Docker image using Google Cloud Build

@@ -1,10 +1,10 @@
-# LEXGUARD — AI Rights & Contract Intelligence System
+# CLEARCLAUSE — AI Rights & Contract Intelligence System
 
 > **Problem Statement 01** · Open Innovation Hackathon 2026
 
 > **🚀 Live Demo:** [https://lexguard-896956006094.asia-south1.run.app](https://lexguard-896956006094.asia-south1.run.app)
 
-LexGuard is an AI-powered contract intelligence platform that analyzes legal and quasi-legal documents to identify potentially harmful, exploitative, ambiguous, or high-risk clauses before users agree to them.
+ClearClause is an AI-powered contract intelligence platform that analyzes legal and quasi-legal documents to identify potentially harmful, exploitative, ambiguous, or high-risk clauses before users agree to them.
 
 ## Chosen Vertical
 
@@ -14,7 +14,7 @@ LexGuard is an AI-powered contract intelligence platform that analyzes legal and
 
 ### Adversarial Multi-Agent Reasoning
 
-LexGuard uses **Google Gemini 2.5 Flash** as its core intelligence engine, employing a dual-agent adversarial reasoning workflow:
+ClearClause uses **Google Gemini 2.5 Flash** as its core intelligence engine, employing a dual-agent adversarial reasoning workflow:
 
 1. **Agent A (Corporate Exploiter):** Scans the contract from a hostile corporate perspective, identifying clauses that could be weaponized against the individual — non-compete traps, IP seizures, liability waivers, privacy violations, and one-sided arbitration.
 
@@ -39,7 +39,7 @@ Every analyzed document receives a comprehensive scorecard across six risk dimen
 
 ### Document Type Classification
 
-LexGuard automatically classifies the document type (Employment Contract, Privacy Policy, Terms of Service, Vendor Agreement, Rental Agreement, etc.) and adjusts its analysis accordingly.
+ClearClause automatically classifies the document type (Employment Contract, Privacy Policy, Terms of Service, Vendor Agreement, Rental Agreement, etc.) and adjusts its analysis accordingly.
 
 ### Severity Classification
 
@@ -106,7 +106,7 @@ Each detected risk is classified as **High**, **Medium**, or **Low** severity wi
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/lexguard.git
+git clone https://github.com/YOUR_USERNAME/clearclause.git
 
 # 2. Install dependencies
 npm install
@@ -128,7 +128,7 @@ npm run dev
 ```bash
 # Using Google Cloud Build CI/CD pipeline
 gcloud builds submit --config=cloudbuild.yaml \
-  --substitutions=_REGION=asia-south1,_SERVICE_NAME=lexguard
+  --substitutions=_REGION=asia-south1,_SERVICE_NAME=clearclause
 ```
 
 ## Project Structure

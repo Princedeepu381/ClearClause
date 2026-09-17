@@ -14,13 +14,13 @@ const inter = Inter({
 });
 
 /**
- * SEO metadata for the LEXGUARD platform.
+ * SEO metadata for the CLEARCLAUSE platform.
  * Includes Open Graph tags for social sharing.
  */
 export const metadata: Metadata = {
-  title: "LEXGUARD | AI Contract Intelligence — Powered by Google Gemini",
+  title: "CLEARCLAUSE | AI Contract Intelligence — Powered by Google Gemini",
   description:
-    "AI-powered contract analysis platform that detects hidden liabilities, exploitative clauses, and one-sided obligations in legal agreements. Built on Google Gemini 2.5 Flash and deployed via Google Cloud Run.",
+    "AI-powered contract analysis platform that detects hidden liabilities, exploitative clauses, and one-sided obligations in legal agreements. Built on Google Gemini 3.6 Flash and deployed via Google Cloud Run.",
   keywords: [
     "contract analysis",
     "legal AI",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "contract intelligence",
     "legal technology",
   ],
-  authors: [{ name: "LEXGUARD Team" }],
+  authors: [{ name: "CLEARCLAUSE Team" }],
   openGraph: {
-    title: "LEXGUARD | AI Contract Intelligence",
+    title: "CLEARCLAUSE | AI Contract Intelligence",
     description:
       "Detect hidden liabilities and exploitative clauses in legal documents instantly with Google Gemini AI.",
     type: "website",
@@ -60,7 +60,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-background text-foreground flex flex-col">
         {children}
-        <GoogleAnalytics gaId="G-LEXGUARD01" />
+        <GoogleAnalytics gaId="G-CLEARCLAUSE01" />
       </body>
     </html>
   );

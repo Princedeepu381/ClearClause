@@ -8,8 +8,8 @@ import { cloudLog } from "./logger";
 const storage = new Storage();
 const bigquery = new BigQuery();
 
-const BUCKET_NAME = process.env.GCS_BUCKET_NAME || "lexguard-audit-logs";
-const DATASET_ID = "lexguard_analytics";
+const BUCKET_NAME = process.env.GCS_BUCKET_NAME || "clearclause-audit-logs";
+const DATASET_ID = "clearclause_analytics";
 const TABLE_ID = "analysis_events";
 
 /**

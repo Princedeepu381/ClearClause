@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 /**
- * Next.js configuration for LEXGUARD.
+ * Next.js configuration for CLEARCLAUSE.
  *
  * - `output: "standalone"` generates a minimal production build
  *   optimized for Google Cloud Run container deployment.

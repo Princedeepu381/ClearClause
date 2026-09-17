@@ -1,6 +1,6 @@
-# Design System & UI Architecture: LEXGUARD
+# Design System & UI Architecture: CLEARCLAUSE
 
-## 1. Visual Identity (LexGuard Aegis Dark-Space)
+## 1. Visual Identity (ClearClause Aegis Dark-Space)
 - **Design Philosophy:** High-density, technical, dashboard-driven interface optimized for dense legal text analysis. Prioritizes readability, data hierarchy, and professional credibility.
 - **Background Architecture:** Solid Deep Charcoal (`#0a0a0a`) base with elevated Obsidian (`#171717`) surface panels, creating layered depth through contrast.
 - **Component Outlines:** Crisp structural borders (`#333333`) forming a clear grid-based interface that separates functional regions.
@@ -53,7 +53,7 @@
 
 ### Navigation Bar
 - Sticky top navigation with backdrop blur and semi-transparent background
-- LEXGUARD wordmark (Shield icon + tracking-widest text) on left
+- CLEARCLAUSE wordmark (Shield icon + tracking-widest text) on left
 - Internal anchor links (Problem, Solution, Live Demo) on right
 - Responsive: hidden on mobile, visible on `md:` breakpoint and above
 

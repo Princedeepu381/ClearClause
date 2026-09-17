@@ -92,7 +92,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Shield className="w-6 h-6 text-blue-500" />
-            <span className="text-lg font-bold tracking-widest text-white">LEXGUARD</span>
+            <span className="text-lg font-bold tracking-widest text-white">CLEARCLAUSE</span>
           </div>
           <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-400">
             <a href="#problem" className="hover:text-white transition-colors">Problem</a>
@@ -112,13 +112,13 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center space-x-2 bg-[#171717] border border-[#333333] px-4 py-2 rounded-full text-sm text-gray-300 mb-8">
             <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-            <span>Powered by Google Gemini 2.5 Flash</span>
+            <span>Powered by Google Gemini 3.6 Flash</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
             AI That Reads<br />the Fine Print
           </h1>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            LexGuard detects hidden liabilities, exploitative clauses, and one-sided obligations in legal agreements — delivering explainable, severity-scored risk analysis in seconds.
+            ClearClause detects hidden liabilities, exploitative clauses, and one-sided obligations in legal agreements — delivering explainable, severity-scored risk analysis in seconds.
           </p>
           <div className="flex justify-center space-x-4">
             <a href="#demo" className="bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition-colors flex items-center">
@@ -196,7 +196,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">One Platform. Complete Contract Defense.</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              LexGuard provides the full detect-analyze-explain loop through an adversarial AI pipeline powered by Google Gemini.
+              ClearClause provides the full detect-analyze-explain loop through an adversarial AI pipeline powered by Google Gemini.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
@@ -205,14 +205,14 @@ export default function Home() {
                 <Upload className="w-6 h-6 text-blue-500" />
               </div>
               <h3 className="text-white font-bold mb-2">Upload or Paste</h3>
-              <p className="text-gray-500 text-xs leading-relaxed">Upload PDF/TXT files or paste contract text directly. LexGuard handles both seamlessly.</p>
+              <p className="text-gray-500 text-xs leading-relaxed">Upload PDF/TXT files or paste contract text directly. ClearClause handles both seamlessly.</p>
             </div>
             <div className="bg-[#171717] border border-[#333333] p-6 rounded-2xl text-center">
               <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="w-6 h-6 text-amber-500" />
               </div>
               <h3 className="text-white font-bold mb-2">AI Reasoning</h3>
-              <p className="text-gray-500 text-xs leading-relaxed">Gemini 2.5 Flash performs adversarial analysis with multi-agent legal reasoning.</p>
+              <p className="text-gray-500 text-xs leading-relaxed">Gemini 3.6 Flash performs adversarial analysis with multi-agent legal reasoning.</p>
             </div>
             <div className="bg-[#171717] border border-[#333333] p-6 rounded-2xl text-center">
               <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -240,7 +240,7 @@ export default function Home() {
               <Brain className="w-8 h-8 mr-3 text-blue-500" />
               See Risk Disappear in Real Time
             </h2>
-            <p className="text-gray-400">This live dashboard connects to the Google Gemini 2.5 Flash engine. Upload a PDF or paste contract text to begin.</p>
+            <p className="text-gray-400">This live dashboard connects to the Google Gemini 3.6 Flash engine. Upload a PDF or paste contract text to begin.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -356,7 +356,7 @@ export default function Home() {
                       <div className="absolute inset-0 rounded-full border-2 border-blue-500 border-t-transparent animate-spin"></div>
                     </div>
                     <p className="font-mono text-sm animate-pulse">Running Adversarial Agent Pipeline...</p>
-                    <p className="text-xs text-gray-600">Google Gemini 2.5 Flash processing</p>
+                    <p className="text-xs text-gray-600">Google Gemini 3.6 Flash processing</p>
                   </div>
                 )}
 
@@ -440,13 +440,13 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Built on Google-First Infrastructure</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Every layer of LexGuard is powered by Google Cloud services — from AI reasoning to deployment.
+              Every layer of ClearClause is powered by Google Cloud services — from AI reasoning to deployment.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#171717] border border-[#333333] p-8 rounded-2xl hover:border-blue-500/50 transition-colors">
               <Sparkles className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Google Gemini 2.5 Flash</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Google Gemini 3.6 Flash</h3>
               <p className="text-gray-400 text-sm leading-relaxed">Core AI engine powering the adversarial multi-agent legal reasoning pipeline with structured JSON output for explainable risk analysis.</p>
             </div>
             <div className="bg-[#171717] border border-[#333333] p-8 rounded-2xl hover:border-amber-500/50 transition-colors">
@@ -490,7 +490,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-[#333333] py-12 text-center text-gray-500 text-sm">
         <p className="mb-2">
-          <span className="text-white font-bold tracking-wider">LEXGUARD</span> — Built with Google Gemini AI · Deployed on Google Cloud Run · Open Innovation Hackathon 2026
+          <span className="text-white font-bold tracking-wider">CLEARCLAUSE</span> — Built with Google Gemini AI · Deployed on Google Cloud Run · Open Innovation Hackathon 2026
         </p>
         <p>Disclaimer: This tool provides AI-assisted analysis and does not constitute formal legal advice.</p>
       </footer>

@@ -1,4 +1,4 @@
-# Tech Stack & Architecture: LEXGUARD — Google Cloud-Native Platform
+# Tech Stack & Architecture: CLEARCLAUSE — Google Cloud-Native Platform
 
 ## 1. Google Services Integration (Core Infrastructure)
 

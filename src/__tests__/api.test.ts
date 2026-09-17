@@ -69,9 +69,9 @@ describe("Security Constraints", () => {
 });
 
 describe("Google Gemini Integration", () => {
-  it("uses Google Gemini 2.5 Flash model", () => {
+  it("uses Google Gemini 3.6 Flash model", () => {
     const source = readRouteSource();
-    expect(source).toContain("gemini-2.5-flash");
+    expect(source).toContain("gemini-3.6-flash");
   });
 
   it("uses the official @google/genai SDK", () => {
@@ -97,7 +97,7 @@ describe("Prompt Engineering Quality", () => {
   it("contains adversarial legal analysis persona", () => {
     const source = readRouteSource();
     expect(source).toContain("adversarial legal intelligence");
-    expect(source).toContain("LEXGUARD");
+    expect(source).toContain("CLEARCLAUSE");
   });
 
   it("requires structured JSON output with all risk fields", () => {

@@ -9,12 +9,12 @@ import {
 import { logToBigQuery, archiveToStorage } from "@/lib/gcp";
 
 /**
- * Google Gemini 2.5 Flash AI client instance.
+ * Google Gemini 3.6 Flash AI client instance.
  * API key is loaded exclusively from server-side environment variables
  * and is never exposed to the client bundle.
  *
  * Google Services Used:
- * - Google Gemini 2.5 Flash (generative AI)
+ * - Google Gemini 3.6 Flash (generative AI)
  * - Google Cloud Logging (structured logging via stdout on Cloud Run)
  * - Google Cloud Run (serverless deployment)
  * - Google Artifact Registry (container image storage)
@@ -23,6 +23,10 @@ import { logToBigQuery, archiveToStorage } from "@/lib/gcp";
  * @see https://ai.google.dev/gemini-api/docs
  */
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+/** Vercel Serverless Function Config: Allow up to 60s for Gemini API processing */
+export const maxDuration = 60;
+export const dynamic = "force-dynamic";
 
 /** Maximum allowed file upload size: 10MB */
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -34,7 +38,7 @@ const MAX_TEXT_LENGTH = 30000;
 const MIN_TEXT_LENGTH = 10;
 
 /**
- * Adversarial multi-agent legal reasoning prompt for Google Gemini 2.5 Flash.
+ * Adversarial multi-agent legal reasoning prompt for Google Gemini 3.6 Flash.
  *
  * This prompt implements a dual-agent adversarial reasoning workflow:
  * - Agent A (Corporate Exploiter): Identifies clauses weaponizable against individuals
@@ -51,7 +55,7 @@ const MIN_TEXT_LENGTH = 10;
  * 8. Scenario-based consequence simulation
  */
 const ANALYSIS_PROMPT = `
-You are LEXGUARD, an adversarial legal intelligence system implementing a multi-agent reasoning workflow.
+You are CLEARCLAUSE, an adversarial legal intelligence system implementing a multi-agent reasoning workflow.
 
 AGENT A — CORPORATE EXPLOITER:
 You think like a hostile corporation trying to maximize exploitation. Scan the contract for:
@@ -129,11 +133,57 @@ function sanitizeInput(text: string): string {
 }
 
 /**
+ * Executes generateContent with exponential backoff retry and model fallback
+ * to handle transient 503 high demand or 429 rate limit spikes gracefully.
+ */
+async function generateContentWithRetry(
+  contents: Parameters<typeof ai.models.generateContent>[0]["contents"]
+) {
+  const modelsToTry = ["gemini-3.6-flash", "gemini-1.5-flash"];
+  let lastError: unknown;
+
+  for (const model of modelsToTry) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const response = await ai.models.generateContent({
+          model,
+          contents,
+          config: {
+            temperature: 0.2,
+          },
+        });
+        return response;
+      } catch (err: unknown) {
+        lastError = err;
+        const msg = err instanceof Error ? err.message : String(err);
+        const isTransient =
+          msg.includes("503") ||
+          msg.includes("UNAVAILABLE") ||
+          msg.includes("high demand") ||
+          msg.includes("429") ||
+          msg.includes("RESOURCE_EXHAUSTED");
+
+        if (isTransient && attempt < 2) {
+          cloudLog("WARNING", `Model ${model} high demand 503 attempt ${attempt}. Retrying...`, "api/analyze");
+          await new Promise((res) => setTimeout(res, 1000));
+        } else if (isTransient) {
+          cloudLog("WARNING", `Switching model from ${model} due to high demand...`, "api/analyze");
+          break;
+        } else {
+          throw err;
+        }
+      }
+    }
+  }
+  throw lastError;
+}
+
+/**
  * POST /api/analyze
  *
- * LexGuard Contract Intelligence API Endpoint.
+ * ClearClause Contract Intelligence API Endpoint.
  * Accepts contract text or PDF file via FormData and sends to
- * Google Gemini 2.5 Flash for adversarial multi-agent legal analysis.
+ * Google Gemini 3.6 Flash for adversarial multi-agent legal analysis.
  *
  * Supports:
  * - PDF files (via Gemini multimodal inlineData)
@@ -147,7 +197,7 @@ function sanitizeInput(text: string): string {
  * - POST-only endpoint (no GET/PUT/DELETE)
  *
  * Google Services:
- * - Google Gemini 2.5 Flash (AI reasoning)
+ * - Google Gemini 3.6 Flash (AI reasoning)
  * - Google Cloud Logging (structured logging)
  *
  * @param req - Incoming HTTP request with FormData body
@@ -224,19 +274,23 @@ export async function POST(req: Request) {
       );
     }
 
-    // Send to Google Gemini 2.5 Flash for adversarial analysis
-    cloudLog("INFO", "Sending to Google Gemini 2.5 Flash", "api/analyze", {
-      model: "gemini-2.5-flash",
+    // Check for valid API key before sending request
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey || apiKey === "your_key_here" || apiKey === "your_gemini_api_key_here") {
+      logAnalysisError("Missing or placeholder GEMINI_API_KEY", inputType);
+      return NextResponse.json(
+        { error: "Invalid or missing GEMINI_API_KEY. Please replace 'your_key_here' in your .env file with a valid Google Gemini API key from Google AI Studio (https://aistudio.google.com/)." },
+        { status: 400 }
+      );
+    }
+
+    // Send to Google Gemini 3.6 Flash for adversarial analysis with retry
+    cloudLog("INFO", "Sending to Google Gemini 3.6 Flash", "api/analyze", {
+      model: "gemini-3.6-flash",
       inputType,
     });
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents,
-      config: {
-        temperature: 0.2,
-      },
-    });
+    const response = await generateContentWithRetry(contents);
 
     const rawText = response.text || "{}";
     let jsonResponse;
@@ -281,6 +335,24 @@ export async function POST(req: Request) {
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : "Internal Server Error";
     logAnalysisError(message, inputType);
+    if (message.includes("API key not valid") || message.includes("API_KEY_INVALID")) {
+      return NextResponse.json(
+        { error: "Google Gemini API key is invalid. Please update GEMINI_API_KEY in your .env file with a valid key from Google AI Studio (https://aistudio.google.com/)." },
+        { status: 400 }
+      );
+    }
+    if (message.includes("503") || message.includes("UNAVAILABLE") || message.includes("high demand")) {
+      return NextResponse.json(
+        { error: "Google Gemini AI is currently experiencing temporary high demand. Automatic retries were attempted. Please try again in a few seconds." },
+        { status: 503 }
+      );
+    }
+    if (message.includes("429") || message.includes("RESOURCE_EXHAUSTED")) {
+      return NextResponse.json(
+        { error: "Google Gemini API rate limit reached. Please wait a moment before trying again." },
+        { status: 429 }
+      );
+    }
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
