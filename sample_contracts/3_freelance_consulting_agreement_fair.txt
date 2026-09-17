@@ -1,0 +1,23 @@
+FREELANCE CONSULTING SERVICES AGREEMENT
+
+This Consulting Services Agreement ("Agreement") is made effective as of March 1, 2026, by and between InnovateTech LLC ("Client") and Nexus Design Studio ("Consultant").
+
+1. SERVICES AND DELIVERABLES
+Consultant agrees to provide UX Design and Frontend Development services as detailed in Statement of Work #1 ("SOW").
+
+2. COMPENSATION AND PAYMENT TERMS
+Client agrees to pay Consultant $120.00 per hour for services rendered. Consultant shall invoice Client bi-weekly. Client agrees to pay invoices within thirty (30) days of receipt (Net 30). Late payments shall incur a monthly interest fee of 1.5%.
+
+3. INTELLECTUAL PROPERTY OWNERSHIP
+Upon receipt of full payment for all outstanding invoices, Consultant hereby assigns to Client all right, title, and interest in and to the final deliverables created specifically for Client under this Agreement. Consultant retains ownership of pre-existing tools, libraries, and frameworks used in creating deliverables.
+
+4. CONFIDENTIALITY
+Both parties agree to protect and keep confidential all non-public technical, product, and financial information disclosed during the term of this Agreement for a period of two (2) years following termination.
+
+5. TERMINATION
+Either party may terminate this Agreement at any time by providing fourteen (14) days advance written notice to the other party. Upon termination, Client shall pay Consultant for all work completed up to the effective termination date.
+
+6. GOVERNING LAW
+This Agreement shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law principles.
+
+IN WITNESS WHEREOF, the parties execute this Agreement as of the date first written above.

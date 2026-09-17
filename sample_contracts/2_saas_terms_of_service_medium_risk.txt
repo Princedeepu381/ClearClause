@@ -1,0 +1,20 @@
+TERMS OF SERVICE AND SERVICE LEVEL AGREEMENT
+
+Last Updated: February 1, 2026
+
+Welcome to CloudSync Enterprise Platform ("Service"). By accessing or using our Service, you agree to be bound by these Terms of Service ("Terms").
+
+1. SUBSCRIPTION PRICING AND AUTOMATIC RENEWAL
+(a) Initial subscription fees are billed annually in advance. Subscriptions automatically renew for successive 12-month periods unless Subscriber provides written cancellation notice via certified mail at least ninety (90) days prior to the expiration of the current billing cycle.
+(b) CloudSync reserves the right to increase subscription fees by up to 25% at each renewal period without prior notice. All paid fees are non-refundable under any circumstances, including service outages.
+
+2. DATA PRIVACY, MONITORING, AND COMMERCIAL MONETIZATION
+(a) Subscriber grants CloudSync a worldwide, perpetual, royalty-free, sublicensable license to collect, monitor, process, analyze, and commercialize all data, user documents, logs, and telemetry uploaded to the Service.
+(b) CloudSync may share, sell, or license aggregated and anonymized user data, telemetry, and behavioral analytics to third-party advertising partners and data brokers.
+
+3. SERVICE AVAILABILITY AND LIMITATION OF LIABILITY
+(a) While CloudSync strives to maintain service availability, CloudSync provides no uptime guarantee or Service Level Agreement (SLA) credits for unplanned downtime or data loss.
+(b) To the maximum extent permitted by law, CloudSync's total aggregate liability for all claims arising out of or related to the Service shall be limited to $50.00 USD. CloudSync shall not be liable for any consequential, indirect, or punitive damages.
+
+4. UNILATERAL AMENDMENT OF TERMS
+CloudSync reserves the right to modify, amend, or replace these Terms at any time by posting updated terms on the website. Subscriber's continued use of the Service following any modifications constitutes binding acceptance of the updated Terms.

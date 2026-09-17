@@ -1,0 +1,25 @@
+EMPLOYMENT AND PROPRIETARY RIGHTS AGREEMENT
+
+This Employment Agreement ("Agreement") is entered into as of January 15, 2026, by and between Apex Global Solutions Inc. ("Company") and the undersigned Employee ("Employee").
+
+1. POSITION AND DUTIES
+Employee agrees to perform duties as Senior Software Engineer. Employee agrees to devote 100% of their working time, attention, and effort exclusively to Company business.
+
+2. INTELLECTUAL PROPERTY AND ASSIGNMENT OF INVENTIONS
+Employee agrees that all inventions, software code, algorithms, ideas, trade secrets, concepts, and developments created, conceived, or reduced to practice by Employee—whether during working hours or non-working hours, whether using Company equipment or personal devices, and whether directly or indirectly related to Company's current or prospective products—shall be the sole and exclusive property of Company from inception. Employee hereby irrevocably assigns all moral rights and worldwide intellectual property rights to Company without further compensation.
+
+3. GLOBAL NON-COMPETE AND NON-SOLICITATION
+During Employee's employment and for a period of twenty-four (24) months following termination of employment for any reason (whether voluntary or involuntary):
+(a) Employee shall not, directly or indirectly, engage in, consult for, advise, invest in, or work for any company, business entity, or project anywhere in the world that operates in the software, artificial intelligence, data analytics, or cloud computing sectors.
+(b) Employee shall not solicit, recruit, or attempt to hire any employee, contractor, vendor, or customer of Company.
+
+4. INDEMNIFICATION AND PERSONAL LIABILITY
+Employee agrees to defend, indemnify, hold harmless, and reimburse Company, its executive officers, directors, and investors against any and all losses, legal fees, claims, liabilities, costs, or damages arising out of Employee's work performance, inadvertent errors in code, or alleged breach of any internal company policy.
+
+5. TERMINATION AND SEVERANCE
+Company may terminate Employee's employment at any time, for any reason or no reason, immediately without prior written notice and without any severance payment or health benefit continuation. Employee agrees to provide ninety (90) days advance written notice prior to voluntary resignation, during which Company may elect to withhold Employee's salary.
+
+6. MANDATORY ONE-SIDED ARBITRATION AND VENUE
+Any dispute, claim, or controversy arising out of this Agreement shall be resolved exclusively through confidential binding arbitration administered by a private arbitrator selected solely by Company. Employee waives all rights to a jury trial or participation in class action lawsuits. Arbitration fees and Company's legal defense fees shall be paid entirely by Employee unless Company consents otherwise.
+
+IN WITNESS WHEREOF, the parties execute this Agreement as of the date first written above.
